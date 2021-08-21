@@ -30,6 +30,7 @@ class ArticleController extends Controller
         $data = $request->all();
 
         $data['author_id'] = Auth::user()->id;
+
         $article = Article::Create($data);
 
         return redirect()->route('view_article', ['id' => $article->id]);
